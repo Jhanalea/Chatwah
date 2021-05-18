@@ -2,10 +2,10 @@
 .DS_store
 
 # Ignore out folder
-/out/
+out
 
 # Ignore .idea folder
-.idea/
+.idea
 
 # Ignore iml files
 *.iml
