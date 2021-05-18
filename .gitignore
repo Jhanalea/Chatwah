@@ -1,0 +1,11 @@
+# Ignore Mac system files
+.DS_store
+
+# Ignore out folder
+/out/
+
+# Ignore .idea folder
+.idea/
+
+# Ignore iml files
+*.iml
