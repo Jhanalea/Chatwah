@@ -1,26 +1,24 @@
-import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Scanner;
 
 public class GameActivity {
+    private final WordData data;
 
-
+    public GameActivity() throws FileNotFoundException {
+        this.data = new WordData();
+    }
 
     public static void main(String[] args) throws FileNotFoundException {
+        GameActivity game = new GameActivity();
+        ArrayList<Hint> hintArrayList = game.data.getHintArrayList();
+        int totalHints = game.data.numHints();
         int playerScore = 0;
-        int totalHints = 5;
         Scanner userInput = new Scanner(System.in);
-        ArrayList<Hint> hintArrayList = new ArrayList<>();
-
-
-        Scanner hintBankScanner = new Scanner(new File("/Users/jhana/IdeaProjects/Chatwah/src/Hints.txt"));
-        for(int i = 0; i < totalHints; i++) {
-            hintArrayList.add(new Hint(hintBankScanner.nextLine(), hintBankScanner.nextLine()));
-        }
 
         System.out.println("Welcome to Chatwah, Let's Play!");
+        game.data.loadArrayList();
         Collections.shuffle(hintArrayList);
         for (Hint hint : hintArrayList) {
             System.out.println(hint.getHintText());
@@ -42,5 +40,4 @@ public class GameActivity {
         }
 
     }
-
 }
