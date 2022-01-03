@@ -1,0 +1,30 @@
+Documentation
+
+Project Description
+Chatwah is a command-line game application. The primary purpose of the app is to entertain users by presenting them with a series of hints in standard English that the user will have to translate to the Jamaican Patois dialect.
+
+Game Logic
+
+	•The hint class constructs the hint which contains a question and answer each. 
+	•The hints are loaded into an arraylist which is then randomized prior to gameplay. 
+	•The user is welcomed to the game and then prompted to answer the first question. 
+	•The user input is then compared to the answer in the question bank. 
+	•If the user’s answer is correct their score is incremented by 1. 
+	•If not, they get 0 points. 
+	•The game will continue until the final question in the bank. 
+
+Potential Refinement
+	•Implement a way for the user to restart the game without re-running the program. 
+	•Limit the number of questions for each iteration of the game. 
+	•Create the arrayList prior to starting the game and then remove already “used” questions, so that if the game is restarted there would only be fresh questions remaining. 
+	•Identify some way to accept variations of answers. 
+
+Future Features
+
+	•Implement levels so that users face increasing difficulty as they progress through the game. 
+	•Implement a timer, so instead of a predetermined number of questions the user can answer as many as possible within a predetermined time. 
+	•Implement a streak feature, so if a user gets a string of questions in a row, they receive a point bonus. 
+	•Implement a hint feature so if a user is stuck they can get further hint. 
+	•Implement a try again feature so the user can re-do a question for half the points. 
+
+
