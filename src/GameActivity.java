@@ -4,7 +4,6 @@ import java.util.Collections;
 import java.util.Scanner;
 
 public class GameActivity {
-
     private final WordData data;
 
     public GameActivity() throws FileNotFoundException {
@@ -41,6 +40,4 @@ public class GameActivity {
         }
 
     }
-
-
 }

@@ -20,9 +20,3 @@ public class Hint {
         return correctAnswer;
     }
 }
-
-
-
-
-
-
