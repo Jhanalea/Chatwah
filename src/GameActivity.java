@@ -10,6 +10,7 @@ public class GameActivity {
         this.data = new WordData();
     }
 
+
     public static void main(String[] args) throws FileNotFoundException {
         GameActivity game = new GameActivity();
         ArrayList<Hint> hintArrayList = game.data.getHintArrayList();
@@ -21,14 +22,20 @@ public class GameActivity {
         game.data.loadArrayList();
         Collections.shuffle(hintArrayList);
         for (Hint hint : hintArrayList) {
-            System.out.println(hint.getHintText());
-            System.out.println("Please Enter Your Answer");
-            String userAnswer = userInput.nextLine();
-            if (userAnswer.equalsIgnoreCase(hint.getCorrectAnswer())) {
-                playerScore++;
-                System.out.println("Correct!");
-            } else {
-                System.out.println("Sorry, that was incorrect! The correct answer is: " + hint.getCorrectAnswer());
+            boolean isCorrect = false;
+            while (!isCorrect) {
+                System.out.println(hint.getHintText());
+                System.out.println("Please Enter Your Answer");
+                String userAnswer = userInput.nextLine();
+                if (userAnswer.equalsIgnoreCase(hint.getCorrectAnswer())) {
+                    playerScore++;
+                    isCorrect = true;
+                    System.out.println("Correct!");
+                } else {
+                    System.out.println("Sorry, that was incorrect! Try Again? (Y/N)");
+                    String tryAgain = userInput.nextLine();
+                    isCorrect = !tryAgain.equalsIgnoreCase("Y");
+                }
             }
 
         }
